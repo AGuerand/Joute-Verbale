@@ -10,13 +10,17 @@ class character:
             self.weakness = "Action"
             self.point = 100
         if role == "The granny"
-            self.strenght = "Action"
+            self.strenght = "Family"
             self.weakness = "Style"
+            self.point = 0
+        if role == "The Nice guy":
+            self.self.strenght = "Action"
+            self.weakness = "Family"
             self.point = 0
         if role == "Jeff":
             self.strenght = "no"
             self.weakness = "no"
-            self.point = 50
+            self.point = -500
 
     def __str__(self):
         return self.role
