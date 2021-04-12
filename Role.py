@@ -20,6 +20,3 @@ class character:
 
     def __str__(self):
         return self.role
-
-    def Achat(self,liste_achat):
-        self.achats.append(liste_achat)
