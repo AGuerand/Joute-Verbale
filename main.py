@@ -353,16 +353,22 @@ def endgame():
         print("you'r so cool !")
         scorePlayer2 = scorePlayer2 + 100
     if types.types == "Money" and player.role == "The cool dude":
+        print("the cool dude is kinda broke tbh")
         scorePlayer1 = scorePlayer1 -30
     elif types.types == "Money" and player2.role == "The cool dude":
+        print("the cool dude is kinda broke tbh")
         scorePlayer2 = scorePlayer2 -30
     elif types.types == "Action" and player.role == "The rich dude":
+        print("The rich dude is such a snob")
         scorePlayer1 = scorePlayer1 -30
     elif types.types == "Action" and player2.role == "The rich dude":
+        print("The rich dude is such a snob")
         scorePlayer2 = scorePlayer2 -30
     elif types.types == "Style" and player.role == "The granny":
+        print("The granny didn't bought any cloth since WW2")
         scorePlayer1 = scorePlayer1 -30
     elif types.types == "Style" and player2.role == "The granny":
+        print("The granny didn't bought any cloth since WW2")
         scorePlayer2 = scorePlayer2 -30
     print("the score of player1 is :" + str(scorePlayer1) + "\n")
     print("the score of player2 is :" + str(scorePlayer2) + "\n")

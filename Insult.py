@@ -1,6 +1,6 @@
 class Insult:
     def __init__(self,types):
-        self.type= types
+        self.types= types
         if types == "Money":
             self.insultFinal=[",you six piece chicken Mcnobody","and remember your poor bruh", ",by the way I just bought your company and you'r fired", ",you absolute cretin"]
             self.sujet=["you","your car", "your job", "your bank account"]
