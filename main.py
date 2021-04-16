@@ -3,12 +3,30 @@ from Insult import Insult
 from Role import Role
 from random import randint
 
-scoreinsult = 0
+global scoreinsult1
+global scoreinsult2
+scoreinsult1 = 0
+scoreinsult2 = 0
+player = ""
+player2 = ""
 chara1 = 0
 Mfree = True
 Sfree = True
 randomType = 0
+global listInsult
+global player1Insult
+global player2Insult
+global exits1
+global turn 
+global exit2
 listInsult = []
+player1Insult = []
+player2Insult = []
+exits1 = 0
+turn = 1
+exits2 = 0
+
+
 
 charaC  = ["Cool dude", "cool dude", "Cool Dude", "cool Dude"]
 charaG = ["Granny", "granny", "the granny", "the Granny", "The granny", "The Granny"]
@@ -203,13 +221,44 @@ def randomInsult():
         for i in range(0,3):
             Random = randint(0 , 13)
             listInsult.append(types.verb[Random])  
+    print ("now choose some of thes words to create your insult player1! \nType stop to finish your insult" )        
+    select()
  
-
+def select():
     print("\n")
     print(*listInsult, sep ="/ ")
-    print ("now choose some of thes words to create your insult !" )
-    Insult1 = input(">>>")
-    Indsult = Insult1.split(' ')
-    print(Indsult)
+    if len(listInsult) >= 1:
+        Insult1 = input(">>>")
+        if any(Insult1 in s for s in listInsult):
+            player1Insult.append(Insult1)
+            select2()
+        elif Insult1 == "stop":
+            select2()
+        else:
+            print ("Choose a valide word\n" )
+            select()
+    else:
+        print("no more words let's see the result")
+        # result()
+
+def select2():
+    print("\n")
+    print(*listInsult, sep ="/ ")
+    print("\n")
+    print("Get in there player 2")
+    if len(listInsult) >= 1:
+        Insult2 = input(">>>")
+        if any(Insult2 in s for s in listInsult):
+            player2Insult.append(Insult2)
+            select()
+        elif Insult2 == "stop":
+            select()
+        else:
+            print ("Choose a valide word\n" )
+            select()
+    else:
+        print("no more words let's see the result")
+        # result()
+    print(Insult2)
 intro()
 
