@@ -362,7 +362,7 @@ def endgame():
         print("Player2 wins this time")
         return
     else:
-        print("What, a tie ? Damn")
+        print("What ? a tie ? Damn !")
         return
 
 
