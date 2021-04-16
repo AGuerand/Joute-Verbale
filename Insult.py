@@ -33,8 +33,3 @@ class Insult:
             self.complement=["tomorow", "today", "street", "hospital", "this morning", "tonight", "in a fight", "your room", "in the kitchen"]
             self.liaisons=["so","if","almost","then","it","like","a", "you", "are", "and", "the", "is", "your"]
             self.verb=["is", "will be", "eating", "eat", "fight","walking","walk","sleeping","sleep","fall","falling","move","moving","playing"] 
-        if types == "no":
-            self.starter=["should", "smells like", "act like", "you should know that","I hope that"]
-            self.complement=["tomorow", "today", "street", "hospital", "this morning", "tonight", "in a fight", "your room", "in the kitchen"]
-            self.liaisons=["so","if","almost","then","it","like","a", "you", "are", "and", "the", "is", "your"]
-            self.verb=["is", "will be", "eating", "eat", "fight","walking","walk","sleeping","sleep","fall","falling","move","moving","playing"] 
