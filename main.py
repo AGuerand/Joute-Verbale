@@ -332,9 +332,6 @@ def endgame():
     while i2 < len(player2Insult):
         i2 = i2 + 1
         scorePlayer2 = scorePlayer2 + 10
-    print("the score of player1 is :" + str(scorePlayer1) + "\n")
-    print("the score of player2 is :" + str(scorePlayer2) + "\n")
-    print(player.role)
     special = randint(0,25)
     if special == 25 and player.role == "Jeff" or player2.role == "Jeff" and special == 25:
         print("you roasted jeff so good that the only rational responce for him was to unleash nuclear armagedon uppon earth.")
@@ -355,6 +352,8 @@ def endgame():
     elif special == 7 and player2.role == "The cool dude":
         print("you'r so cool !")
         scorePlayer2 = scorePlayer2 + 100
+    print("the score of player1 is :" + str(scorePlayer1) + "\n")
+    print("the score of player2 is :" + str(scorePlayer2) + "\n")
     if scorePlayer1 > scorePlayer2:
         print("Player1 wins the day")
         return
