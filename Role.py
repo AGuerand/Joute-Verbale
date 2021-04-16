@@ -16,7 +16,3 @@ class Role:
         if role == "Jeff":
             self.weakness = "no"
             self.point = -500
-
-    def point(self):
-        for number in self.point:
-            return number
