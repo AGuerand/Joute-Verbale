@@ -16,6 +16,7 @@ randomType = 0
 global listInsult
 global player1Insult
 global player2Insult
+global listInsult 
 listInsult = []
 player1Insult = []
 player2Insult = []
@@ -222,13 +223,17 @@ def randomInsult():
 def select():
     print("\n")
     print(*listInsult, sep ="/ ")
+    print("Get in there player 1")
     if len(listInsult) >= 1:
         Insult1 = input(">>>")
         if any(Insult1 in s for s in listInsult):
+            listInsult.remove(Insult1)
             player1Insult.append(Insult1)
+            print("your current sentence is :")
+            print(player1Insult)
             select2()
-        elif Insult1 == "stop":
-            select2()
+        elif Insult1 == "end":
+            select2alone()
         else:
             print ("Choose a valide word\n" )
             select()
@@ -244,9 +249,13 @@ def select2():
     if len(listInsult) >= 1:
         Insult2 = input(">>>")
         if any(Insult2 in s for s in listInsult):
+            listInsult.remove(Insult2)
             player2Insult.append(Insult2)
+            print("your current sentence is :")
+            print(player2Insult)
+            
             select()
-        elif Insult2 == "stop":
+        elif Insult2 == "end":
             select()
         else:
             print ("Choose a valide word\n" )
@@ -255,5 +264,56 @@ def select2():
         print("no more words let's see the result")
         # result()
     print(Insult2)
+
+def selectalone():
+    print("\n")
+    print(*listInsult, sep ="/ ")
+    print("\n")
+    print("Get in there player 1, finish your insult")
+    if len(listInsult) >= 1:
+        Insult1 = input(">>>")
+        if any(Insult1 in s for s in listInsult):
+            listInsult.remove(Insult1)
+            player1Insult.append(Insult1)
+            print("your current sentence is :")
+            print(player1Insult)
+            selectalone()
+        elif Insult1 == "end":
+            endgame()
+        else:
+            print ("Choose a valide word\n" )
+            selectalone()
+    else:
+        print("no more words let's see the result")
+        # result()
+    print(Insult1)
+
+
+
+def select2alone():
+    print("\n")
+    print(*listInsult, sep ="/ ")
+    print("\n")
+    print("Get in there player 2, finish your insult.")
+    if len(listInsult) >= 1:
+        Insult2 = input(">>>")
+        if any(Insult2 in s for s in listInsult):
+            listInsult.remove(Insult2)
+            player2Insult.append(Insult2)
+            print("your current sentence is :")
+            print(player2Insult)
+            select2alone()
+        elif Insult2 == "end":
+            endgame()
+        else:
+            print ("Choose a valide word\n" )
+            select2alone()
+    else:
+        print("no more words let's see the result")
+        # result()
+    print(Insult2)
 intro()
+
+
+
 
