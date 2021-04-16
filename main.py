@@ -8,10 +8,6 @@ chara1 = 0
 Mfree = True
 Sfree = True
 randomType = 0
-# global listInsult
-# global player1Insult
-# global player2Insult
-# global listInsult 
 listInsult = []
 player1Insult = []
 player2Insult = []
