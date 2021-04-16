@@ -6,7 +6,7 @@ class Role:
             self.point = 0
         if role == "The rich dude":
             self.weakness = "Action"
-            self.point = 100
+            self.point = 50
         if role == "The granny":
             self.weakness = "Style"
             self.point = 0
@@ -17,5 +17,6 @@ class Role:
             self.weakness = "no"
             self.point = -500
 
-    def __str__(self):
-        return self.role
+    def point(self):
+        for number in self.point:
+            return number

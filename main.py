@@ -3,20 +3,15 @@ from Insult import Insult
 from Role import Role
 from random import randint
 
-global scoreinsult1
-global scoreinsult2
-scoreinsult1 = 0
-scoreinsult2 = 0
-player = ""
-player2 = ""
+
 chara1 = 0
 Mfree = True
 Sfree = True
 randomType = 0
-global listInsult
-global player1Insult
-global player2Insult
-global listInsult 
+# global listInsult
+# global player1Insult
+# global player2Insult
+# global listInsult 
 listInsult = []
 player1Insult = []
 player2Insult = []
@@ -45,7 +40,7 @@ def choice():
     "-The granny\n"
     "-Rich dude\n"
     "-Jeff\n")
-
+    global player
 
     Charachoice1 = input(">>>")
     if Charachoice1 in charaC :
@@ -98,7 +93,7 @@ def choice():
         choice()
 
 def introplayertwo(chara1):
-    
+    global player2
     print ("Now, it's time for player 2 to choose his character."
     "\n but you can't choose the same one as player 1")
     Charachoice2 = input(">>>")
@@ -120,6 +115,7 @@ def introplayertwo(chara1):
     randomInsult()
 
 def randomInsult():
+    global types
     randomType = randint(1 , 4)
     if randomType == 1:
         print ("The insult type is : Money")
@@ -242,7 +238,7 @@ def select():
             select()
     else:
         print("no more words let's see the result")
-        # result()
+        endgame()
 
 def select2():
     print("\n")
@@ -268,7 +264,7 @@ def select2():
             select()
     else:
         print("no more words let's see the result")
-        # result()
+        endgame()
     print(Insult2)
 
 def selectalone():
@@ -294,7 +290,7 @@ def selectalone():
             selectalone()
     else:
         print("no more words let's see the result")
-        # result()
+        endgame()
     print(Insult1)
 
 
@@ -322,8 +318,56 @@ def select2alone():
             select2alone()
     else:
         print("no more words let's see the result")
-        # result()
+        endgame()
     print(Insult2)
+
+def endgame():
+    scorePlayer1 = player.point
+    scorePlayer2 = player2.point
+    i = 0
+    i2 = 0
+    while i < len(player1Insult):
+        i = i + 1
+        scorePlayer1 = scorePlayer1 + 10
+    while i2 < len(player2Insult):
+        i2 = i2 + 1
+        scorePlayer2 = scorePlayer2 + 10
+    print("the score of player1 is :" + str(scorePlayer1) + "\n")
+    print("the score of player2 is :" + str(scorePlayer2) + "\n")
+    print(player.role)
+    special = randint(0,25)
+    if special == 25 and player.role == "Jeff" or player2.role == "Jeff" and special == 25:
+        print("you roasted jeff so good that the only rational responce for him was to unleash nuclear armagedon uppon earth.")
+        time.sleep(4)
+        print("turning the planet into a dead chunk of rock, tumbling through the vast vacuum of an uncaring universe.")
+        time.sleep(6)
+        print("jeff wins")
+        return
+    if special == 15 and player.role == "The granny":
+        print("The granny didn't hear half of what you were saying so it's not as impactful")
+        scorePlayer2 = scorePlayer2 - 100
+    elif special == 15 and player2.role == "The granny":
+        print("The granny didn't hear half of what you were saying so it's not as impactful")
+        scorePlayer = scorePlayer - 100
+    if special == 7 and player.role == "The cool dude":
+        print("you'r so cool !")
+        scorePlayer = scorePlayer + 100
+    elif special == 7 and player2.role == "The cool dude":
+        print("you'r so cool !")
+        scorePlayer2 = scorePlayer2 + 100
+    if scorePlayer1 > scorePlayer2:
+        print("Player1 wins the day")
+        return
+    elif scorePlayer1 < scorePlayer2:
+        print("Player2 wins this time")
+        return
+    else:
+        print("What a tie ? Damn")
+        return
+
+
+
+    
 intro()
 
 
