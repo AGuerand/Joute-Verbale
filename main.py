@@ -226,9 +226,12 @@ def select():
     print("Get in there player 1")
     if len(listInsult) >= 1:
         Insult1 = input(">>>")
-        if any(Insult1 in s for s in listInsult):
-            listInsult.remove(Insult1)
+        if Insult1 in listInsult:
             player1Insult.append(Insult1)
+            try:
+                listInsult.remove(Insult1)
+            except ValueError:
+                pass
             print("your current sentence is :")
             print(player1Insult)
             select2()
@@ -248,15 +251,18 @@ def select2():
     print("Get in there player 2")
     if len(listInsult) >= 1:
         Insult2 = input(">>>")
-        if any(Insult2 in s for s in listInsult):
-            listInsult.remove(Insult2)
+        if Insult2 in listInsult:
             player2Insult.append(Insult2)
+            try:
+                listInsult.remove(Insult2)
+            except ValueError:
+                pass
             print("your current sentence is :")
             print(player2Insult)
             
             select()
         elif Insult2 == "end":
-            select()
+            selectalone()
         else:
             print ("Choose a valide word\n" )
             select()
@@ -272,9 +278,12 @@ def selectalone():
     print("Get in there player 1, finish your insult")
     if len(listInsult) >= 1:
         Insult1 = input(">>>")
-        if any(Insult1 in s for s in listInsult):
-            listInsult.remove(Insult1)
+        if Insult1 in listInsult:
             player1Insult.append(Insult1)
+            try:
+                listInsult.remove(Insult1)
+            except ValueError:
+                pass
             print("your current sentence is :")
             print(player1Insult)
             selectalone()
@@ -297,9 +306,12 @@ def select2alone():
     print("Get in there player 2, finish your insult.")
     if len(listInsult) >= 1:
         Insult2 = input(">>>")
-        if any(Insult2 in s for s in listInsult):
-            listInsult.remove(Insult2)
+        if Insult2 in listInsult:
             player2Insult.append(Insult2)
+            try:
+                listInsult.remove(Insult2)
+            except ValueError:
+                pass
             print("your current sentence is :")
             print(player2Insult)
             select2alone()
