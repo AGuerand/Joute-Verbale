@@ -3,7 +3,8 @@ from Insult import Insult
 from Role import Role
 from random import randint
 
-chara1= 0
+scoreinsult = 0
+chara1 = 0
 Mfree = True
 Sfree = True
 
@@ -246,5 +247,9 @@ def randomInsult():
             Random = randint(0 , 13)
             listInsult.append(types.verb[Random])   
     print(*listInsult, sep = ", ")
+
+    print ("now choose some of thes words to create your insult !" )
+    Insult1 = input(">>>")
+    indsult = Insult1.split(' ')
 intro()
 
