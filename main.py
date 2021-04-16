@@ -3,9 +3,12 @@ from Insult import Insult
 from Role import Role
 from random import randint
 
-chara1= 0
+scoreinsult = 0
+chara1 = 0
 Mfree = True
 Sfree = True
+randomType = 0
+listInsult = []
 
 charaC  = ["Cool dude", "cool dude", "Cool Dude", "cool Dude"]
 charaG = ["Granny", "granny", "the granny", "the Granny", "The granny", "The Granny"]
@@ -106,9 +109,7 @@ def randomInsult():
     randomType = randint(1 , 4)
     if randomType == 1:
         print ("The insult type is : Money")
-        types = Insult("Money")
-        listInsult = []
-        
+        types = Insult("Money")        
         for i in range(0,3):
             Random = randint(0 , 3)
             listInsult.append(types.insultFinal[Random])
@@ -119,7 +120,7 @@ def randomInsult():
             Random = randint(0 , 3)
             listInsult.append(types.adjectives[Random])
         for i in range(0,3): 
-            Random = randint(0 , 5)
+            Random = randint(0 , 4)
             listInsult.append(types.starter[Random])
         for i in range(0,3):
             Random = randint(0 , 8)
@@ -133,118 +134,82 @@ def randomInsult():
     if randomType == 2:
         print ("The insult type is : Family")
         types = Insult("Family")
-        listInsult = []
-        
         for i in range(0,3):
-            
             Random = randint(0 , 3)
             listInsult.append(types.insultFinal[Random])
-        
         for i in range(0,3):
-            
-            Random = randint(0 , 3)
+            Random = randint(0 , 9)
             listInsult.append(types.sujet[Random])
-        
         for i in range(0,3):
-            
-            Random = randint(0 , 3)
+            Random = randint(0 , 7)
             listInsult.append(types.adjectives[Random])
-        
         for i in range(0,3):
-            
-            Random = randint(0 , 5)
+            Random = randint(0 , 4)
             listInsult.append(types.starter[Random])
-        
         for i in range(0,3):
-            
             Random = randint(0 , 8)
             listInsult.append(types.complement[Random])
-        
         for i in range(0,3):
-            
             Random = randint(0 , 11)
             listInsult.append(types.liaisons[Random])
-        
         for i in range(0,3):
-            
             Random = randint(0 , 13)
             listInsult.append(types.verb[Random])   
     if randomType == 3:
         print ("The insult type is : Style")
-        types = Insult("Style")
-        listInsult = []
-        
-        for i in range(0,3):
-            
+        types = Insult("Style")        
+        for i in range(0,3):            
             Random = randint(0 , 3)
             listInsult.append(types.insultFinal[Random])
-        
-        for i in range(0,3):
-            
-            Random = randint(0 , 3)
+        for i in range(0,3):      
+            Random = randint(0 , 10)
             listInsult.append(types.sujet[Random])
-        
         for i in range(0,3):
-            
             Random = randint(0 , 3)
             listInsult.append(types.adjectives[Random])
-        
         for i in range(0,3):
-            
-            Random = randint(0 , 5)
+            Random = randint(0 , 4)
             listInsult.append(types.starter[Random])
-        
         for i in range(0,3):
-            
             Random = randint(0 , 8)
             listInsult.append(types.complement[Random])
-        
         for i in range(0,3):
-            
             Random = randint(0 , 11)
             listInsult.append(types.liaisons[Random])
-        
         for i in range(0,3):
-            
             Random = randint(0 , 13)
             listInsult.append(types.verb[Random])   
     if randomType == 4:
         print ("The insult type is : Action")
-        types = Insult("Action")
-        listInsult = []
-        
+        types = Insult("Action")        
         for i in range(0,3):
-            
             Random = randint(0 , 3)
             listInsult.append(types.insultFinal[Random])
-        
         for i in range(0,3):
-            
             Random = randint(0 , 3)
             listInsult.append(types.sujet[Random])
-        
         for i in range(0,3):
-            
             Random = randint(0 , 3)
             listInsult.append(types.adjectives[Random])
-        
         for i in range(0,3):
-            
-            Random = randint(0 , 5)
+            Random = randint(0 , 4)
             listInsult.append(types.starter[Random])
-        
         for i in range(0,3):
-            
             Random = randint(0 , 8)
             listInsult.append(types.complement[Random])
-        
         for i in range(0,3):
             Random = randint(0 , 11)
             listInsult.append(types.liaisons[Random])
-
         for i in range(0,3):
             Random = randint(0 , 13)
-            listInsult.append(types.verb[Random])   
-    print(*listInsult, sep = ", ")
+            listInsult.append(types.verb[Random])  
+ 
+
+    print("\n")
+    print(*listInsult, sep ="/ ")
+    print ("now choose some of thes words to create your insult !" )
+    Insult1 = input(">>>")
+    Indsult = Insult1.split(' ')
+    print(Indsult)
 intro()
 
