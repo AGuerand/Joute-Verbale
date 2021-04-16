@@ -16,15 +16,10 @@ randomType = 0
 global listInsult
 global player1Insult
 global player2Insult
-global exits1
-global turn 
-global exit2
 listInsult = []
 player1Insult = []
 player2Insult = []
-exits1 = 0
-turn = 1
-exits2 = 0
+
 
 
 
