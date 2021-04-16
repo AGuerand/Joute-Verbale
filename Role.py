@@ -11,7 +11,7 @@ class Role:
             self.weakness = "Style"
             self.point = 0
         if role == "The Nice guy":
-            self.weakness = "Family"
+            self.weakness = "no"
             self.point = 0
         if role == "Jeff":
             self.weakness = "no"
