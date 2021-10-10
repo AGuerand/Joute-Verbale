@@ -1,8 +1,8 @@
-# Python
-Joute verbale
+# Verbal Jousting
 
-Créé par Correia Simon et Guerand Anthony
+School project at Paris Ynov Campus.
+Created by Correia Simon and Guerand Anthony
 
-Le but du jeux est de créer des insultes avec des mots tirés aleatoirement
+A game where you create the best insults to win from a hard-coded dictionary.
 
-Attention ! : Le jeux n'est absolument pas balance
+
